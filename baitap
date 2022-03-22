@@ -1,0 +1,59 @@
+Multiple choices:
+Câu  1: false
+Câu  2: true
+Câu  3: true
+Câu  4: 3
+Câu  5: 4
+Câu  6: 1
+Câu  7: 3
+Câu  8: 2
+Câu  9: 1
+Câu 10: 2
+Câu 11: 3
+Câu 12: 2
+Câu 13: 1
+
+Thực hành:
+Câu 1:
+const input = ["a", "b", "c", "d", "e", "f"];
+console.log = input.reverse();
+
+hoặc
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+reverseString("abcdef");
+
+Câu 2:
+let myArray = [1, 2, 3, 5, 4, 2, 6, 4];
+let myArray2 = myArray.reduce(function (accumulator, element) {
+  if (accumulator.indexOf(element) === -1) {
+    accumulator.push(element)
+  }
+  return accumulator
+}, [])
+
+console.log(myArray2)
+
+Câu 3:
+function array_unique(array){
+    array.sort();
+    let max =[0,0];
+    let count =1;
+    for (let i = array.length-1; i > 0; --i) {
+        if (array[i] == array[i-1]) ++count; //Thấy phần tử trùng nhau thì tiếp tục đếm
+        else{
+             if (max[1] < count){ 
+                  max[0] = array[i];
+                  max[1] = count;   
+             }
+             count = 1;
+        }
+    }
+    console.log("Value "+max[0]+" Count "+max[1]+"");
+}
+let array = [ 7, 2, 6, 7, 4, 9, 8 ];
+array_unique(array);
+
+Câu 4:
